@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Midnight (dark, default) */
+:root,
+[data-theme="dark"] {
+  --bg: #150b2e;
+  --surface: #1f1244;
+  --line: #3b2a6e;
+  --text: #eeeafb;
+  --muted: #b4aad6;
+  --accent: #7dd3fc;
+  --on-accent: #150b2e;
+  color-scheme: dark;
+}
+
+/* Porcelain (light) */
+[data-theme="light"] {
+  --bg: #eef6ff;
+  --surface: #ffffff;
+  --line: #cde0f5;
+  --text: #1e1245;
+  --muted: #565080;
+  --accent: #5b34d6;
+  --on-accent: #ffffff;
+  color-scheme: light;
+}
+
+@layer base {
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-6;
+  }
+  .label {
+    @apply font-mono text-xs uppercase tracking-widest text-accent;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-on-accent hover:opacity-90;
+  }
+  .btn-secondary {
+    @apply btn border border-line text-ink hover:border-accent;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-surface p-6;
+  }
+  .input {
+    @apply w-full rounded-lg border border-line bg-bg px-3 py-2.5 text-sm text-ink placeholder:text-muted;
+  }
+}
+
+.spot {
+  background-image: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+  .orbit-ring {
+    animation: spin 40s linear infinite;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
