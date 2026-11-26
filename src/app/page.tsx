@@ -11,7 +11,7 @@ import { solutions } from "@/lib/solutions";
 export default function Home() {
   return (
     <>
-      <section className="container-page relative grid gap-12 overflow-hidden pb-8 pt-16 md:pt-24 lg:grid-cols-2 lg:items-center">
+      <section className="container-page relative grid gap-12 pb-8 pt-16 md:pt-24 lg:grid-cols-2 lg:items-center">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-accent opacity-15 blur-3xl"
