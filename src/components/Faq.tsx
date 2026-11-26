@@ -13,7 +13,7 @@ const items = [
   },
   {
     q: "Which of the three solutions should we start with?",
-    a: "Start with the problem that costs you most: repetitive work (Automate), scattered data (Understand) or hard decisions (Decide). We can help you choose.",
+    a: "Start with the problem that costs you most: finding information (Onderzoeker), converting data between systems (Agentic Omzetter) or trusting your data quality (Kwalificatiestrijder). We can help you choose.",
   },
 ];
 

@@ -3,7 +3,9 @@ export type Solution = {
   slug: string;
   pillar: string;
   name: string;
+  meaning: string;
   tagline: string;
+  description: string;
   problem: string;
   how: { title: string; text: string }[];
   outcomes: string[];
@@ -12,64 +14,73 @@ export type Solution = {
 
 export const solutions: Solution[] = [
   {
-    slug: "automation",
-    pillar: "Automate",
-    name: "AI Business Automation",
-    tagline: "Reduce repetitive work and improve operational efficiency.",
+    slug: "onderzoeker",
+    pillar: "Research",
+    name: "Onderzoeker Powered by AI",
+    meaning: "Dutch for \"researcher\"",
+    tagline: "An AI researcher that finds, reads and summarises the information you need.",
+    description:
+      "Onderzoeker is your AI-powered research assistant. It searches your documents, systems and approved sources, reads what it finds and presents clear findings with the sources behind them, so your team spends its time on conclusions instead of searching.",
     problem:
-      "Teams lose time on manual, repetitive processes such as document handling, data entry and routing requests between systems.",
+      "Research across documents, systems and sources is slow, manual and inconsistent. Valuable information is hard to find, and it is difficult to show where an answer came from.",
     how: [
-      { title: "Connect", text: "Link the systems and documents your process already uses." },
-      { title: "Automate", text: "AI handles routine steps and prepares the rest." },
-      { title: "Review", text: "People approve exceptions and keep control." },
-      { title: "Improve", text: "Track results and refine the workflow." },
+      { title: "Ask", text: "Describe the question or topic you want researched." },
+      { title: "Collect", text: "The AI searches your approved documents, data and sources." },
+      { title: "Summarise", text: "Findings are condensed into clear answers with their sources." },
+      { title: "Review", text: "A person checks the results and decides what to use." },
     ],
     outcomes: [
-      "Less manual effort on repetitive tasks",
-      "Faster, more consistent process handling",
-      "Human review for exceptions",
+      "Less time spent searching and reading manually",
+      "Findings that can be traced back to their sources",
+      "More consistent research across the team",
     ],
-    integrations: ["Microsoft 365", "SAP", "REST APIs"],
+    integrations: ["Microsoft 365", "Document stores", "REST APIs"],
   },
   {
-    slug: "data-intelligence",
-    pillar: "Understand",
-    name: "AI Data Intelligence",
-    tagline: "Turn business data into useful insights.",
+    slug: "omzetter",
+    pillar: "Convert",
+    name: "Agentic Omzetter",
+    meaning: "Dutch for \"converter\"",
+    tagline: "AI agents that convert your data and documents from one format or system to another.",
+    description:
+      "Agentic Omzetter uses AI agents to plan and carry out conversions: mapping source data to a target structure, transforming it step by step and handing exceptions to a person. It is built for migration and integration projects where manual conversion is slow and error-prone.",
     problem:
-      "Valuable information is scattered across systems and reports, which makes it slow to analyse and hard to act on.",
+      "Moving data between systems or formats is mostly manual work. It is slow, hard to repeat and easy to get wrong, and it often delays migration projects.",
     how: [
-      { title: "Ingest", text: "Bring data in from approved sources with clear permissions." },
-      { title: "Analyse", text: "AI finds patterns, trends and anomalies." },
-      { title: "Explain", text: "Insights are presented in plain business language." },
-      { title: "Share", text: "Deliver reports and dashboards to the right people." },
+      { title: "Map", text: "Define the source data and the target structure." },
+      { title: "Plan", text: "AI agents work out the conversion steps for each type of record." },
+      { title: "Convert", text: "The agents transform the data and flag anything unclear." },
+      { title: "Deliver", text: "Converted data is handed over for validation and loading." },
     ],
     outcomes: [
-      "One clearer view across data sources",
-      "Faster answers to business questions",
-      "Insights that non-specialists can use",
+      "Less manual effort in migration and integration work",
+      "Repeatable conversions instead of one-off scripts",
+      "Exceptions flagged for human review",
     ],
-    integrations: ["Databases and data warehouses", "Microsoft 365", "REST APIs"],
+    integrations: ["SAP", "Databases", "CSV, XML and JSON files", "REST APIs"],
   },
   {
-    slug: "decision-support",
-    pillar: "Decide",
-    name: "AI Decision Support",
-    tagline: "Help people make better-informed decisions.",
+    slug: "kwalificatiestrijder",
+    pillar: "Validate",
+    name: "Kwalificatiestrijder",
+    meaning: "Dutch for \"qualifier warrior\"",
+    tagline: "Check and qualify your data before it is used, converted or migrated.",
+    description:
+      "Kwalificatiestrijder is the guardian of your data quality. It checks data against your rules, finds errors, gaps and duplicates, and reports what needs fixing, so bad data is caught before it reaches a migration, a report or a decision.",
     problem:
-      "Important decisions rely on incomplete information, and the reasoning behind them is hard to document and review.",
+      "Poor data quality breaks migrations, reports and decisions. Problems are usually found late, when they are expensive to fix.",
     how: [
-      { title: "Frame", text: "Define the decision, options and criteria." },
-      { title: "Evidence", text: "Gather the relevant data and assumptions." },
-      { title: "Compare", text: "Review scenarios, risks and recommendations." },
-      { title: "Decide", text: "A person decides and the rationale is recorded." },
+      { title: "Define", text: "Set the rules and quality standards your data must meet." },
+      { title: "Scan", text: "The data is checked automatically against those rules." },
+      { title: "Flag", text: "Errors, gaps and duplicates are listed and prioritised." },
+      { title: "Approve", text: "A person reviews the findings and signs off the data." },
     ],
     outcomes: [
-      "Transparent evidence and assumptions",
-      "Side-by-side scenario comparison",
-      "Clear human accountability",
+      "Data issues found before go-live",
+      "A clear quality report for every dataset",
+      "Human sign-off on what is accepted",
     ],
-    integrations: ["Microsoft 365", "Internal data sources", "REST APIs"],
+    integrations: ["Databases", "CSV, XML and JSON files", "REST APIs"],
   },
 ];
 

@@ -5,9 +5,9 @@
 /* Midnight (dark, default) */
 :root,
 [data-theme="dark"] {
-  --bg: #150b2e;
-  --surface: #1f1244;
-  --line: #3b2a6e;
+  --bg: #1a0b3d;
+  --surface: #271559;
+  --line: #4a3490;
   --text: #eeeafb;
   --muted: #b4aad6;
   --accent: #7dd3fc;
@@ -17,9 +17,9 @@
 
 /* Porcelain (light) */
 [data-theme="light"] {
-  --bg: #eef6ff;
+  --bg: #d6e6ff;
   --surface: #ffffff;
-  --line: #cde0f5;
+  --line: #a9c6ee;
   --text: #1e1245;
   --muted: #565080;
   --accent: #5b34d6;
@@ -66,6 +66,47 @@
   }
 }
 
+/* Radial data-graph behind the hero orbit; the static state is the finished graph. */
+.rg .edge {
+  fill: none;
+  stroke: var(--accent);
+  stroke-opacity: 0.6;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.rg .edge { stroke-width: 2.2; }
+.rg .link {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  stroke-dasharray: 6 10;
+  opacity: 0.3;
+}
+.rg .node {
+  fill: var(--bg);
+  stroke: var(--accent);
+  stroke-width: 2.6;
+}
+.rg .core {
+  fill: var(--accent);
+}
+.rg .nodeg {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.rg .glow {
+  fill: var(--accent);
+  opacity: 0.18;
+}
+.rg .flow {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-dasharray: 0.008 0.09;
+  opacity: 0;
+}
+
 .spot {
   background-image: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%);
 }
@@ -80,8 +121,27 @@
     opacity: 1;
     transform: none;
   }
-  .orbit-ring {
-    animation: spin 40s linear infinite;
+  .orbit-spin {
+    animation: spin 30s linear infinite;
+  }
+  .orbit-counter {
+    animation: spin 30s linear infinite reverse;
+  }
+  .orbit-spin-rev {
+    animation: spin 30s linear infinite reverse;
+  }
+  .orbit-counter-rev {
+    animation: spin 30s linear infinite;
+  }
+  .orbit:hover .orbit-spin,
+  .orbit:hover .orbit-counter,
+  .orbit:hover .orbit-spin-rev,
+  .orbit:hover .orbit-counter-rev,
+  .orbit:focus-within .orbit-spin,
+  .orbit:focus-within .orbit-counter,
+  .orbit:focus-within .orbit-spin-rev,
+  .orbit:focus-within .orbit-counter-rev {
+    animation-play-state: paused;
   }
   @keyframes spin {
     to {

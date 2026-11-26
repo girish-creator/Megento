@@ -5,6 +5,7 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 import { Reveal } from "@/components/Reveal";
 import { SolutionTabs } from "@/components/SolutionTabs";
 import { site } from "@/lib/site";
+import { services } from "@/lib/services";
 import { solutions } from "@/lib/solutions";
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
           <p className="label">AI for the enterprise</p>
           <h1 className="mt-4 text-5xl font-semibold leading-tight md:text-6xl">{site.tagline}</h1>
           <p className="mt-6 max-w-xl text-lg text-muted">
-            Three AI solutions that automate operations, unlock insight from your data and support better decisions,
+            Three AI solutions that research information, convert data between systems and validate data quality,
             hosted in the EU and built for GDPR and EU AI Act requirements.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -28,18 +29,31 @@ export default function Home() {
           </div>
         </div>
         <div className="relative">
-          <HeroOrbit solutions={solutions} />
+          <HeroOrbit />
         </div>
       </section>
 
       <section id="solutions" className="container-page mt-24 scroll-mt-24">
         <Reveal>
           <p className="label">Solutions</p>
-          <h2 className="mt-3 text-3xl font-semibold">Automate. Understand. Decide.</h2>
+          <h2 className="mt-3 text-3xl font-semibold">Research. Convert. Validate.</h2>
           <p className="mt-3 max-w-2xl text-muted">Pick a solution to see how it works, sample screens and a walkthrough video.</p>
         </Reveal>
         <Reveal delay={100} className="mt-8">
-          <SolutionTabs solutions={solutions} />
+          <SolutionTabs items={solutions} basePath="/solutions" id="solutions" label="Solutions" />
+        </Reveal>
+      </section>
+
+      <section id="services" className="container-page mt-24 scroll-mt-24">
+        <Reveal>
+          <p className="label">Services</p>
+          <h2 className="mt-3 text-3xl font-semibold">DevOps. Platform. Support.</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            The services around the solutions that keep them running reliably in your organisation.
+          </p>
+        </Reveal>
+        <Reveal delay={100} className="mt-8">
+          <SolutionTabs items={services} basePath="/services" id="services" label="Services" />
         </Reveal>
       </section>
 

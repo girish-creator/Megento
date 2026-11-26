@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { solutions } from "@/lib/solutions";
+import { services } from "@/lib/services";
 
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-line">
-      <div className="container-page grid gap-10 py-12 text-sm md:grid-cols-3">
+      <div className="container-page grid gap-10 py-12 text-sm md:grid-cols-4">
         <div>
           <p className="font-display text-lg font-semibold">{site.name}</p>
           <p className="mt-2 max-w-xs text-muted">{site.tagline}</p>
@@ -16,6 +17,18 @@ export function Footer() {
             {solutions.map((s) => (
               <li key={s.slug}>
                 <Link href={`/solutions/${s.slug}`} className="hover:text-ink">
+                  {s.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="label">Services</p>
+          <ul className="mt-3 space-y-2 text-muted">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link href={`/services/${s.slug}`} className="hover:text-ink">
                   {s.name}
                 </Link>
               </li>

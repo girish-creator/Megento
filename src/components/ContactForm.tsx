@@ -50,9 +50,12 @@ export function ContactForm() {
       <label className={field}>
         Solution of interest
         <select name="interest" defaultValue="not-sure" className="input mt-1">
-          <option value="automation">AI Business Automation</option>
-          <option value="data-intelligence">AI Data Intelligence</option>
-          <option value="decision-support">AI Decision Support</option>
+          <option value="onderzoeker">Onderzoeker Powered by AI</option>
+          <option value="omzetter">Agentic Omzetter</option>
+          <option value="kwalificatiestrijder">Kwalificatiestrijder</option>
+          <option value="devops">DevOps</option>
+          <option value="platform">Platform</option>
+          <option value="support">Support</option>
           <option value="not-sure">Not sure yet</option>
         </select>
       </label>

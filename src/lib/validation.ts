@@ -5,7 +5,7 @@ export const leadSchema = z.object({
   email: z.string().trim().email().max(200),
   company: z.string().trim().min(1).max(160),
   role: z.string().trim().max(120).optional().default(""),
-  interest: z.enum(["automation", "data-intelligence", "decision-support", "not-sure"]),
+  interest: z.enum(["onderzoeker", "omzetter", "kwalificatiestrijder", "devops", "platform", "support", "not-sure"]),
   message: z.string().trim().max(2000).optional().default(""),
   consent: z.literal(true),
   // Honeypot: real users leave it empty.

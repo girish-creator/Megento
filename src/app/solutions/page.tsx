@@ -24,7 +24,7 @@ export default function SolutionsPage() {
       <section className="container-page mt-20">
         <Reveal>
           <h2 className="mb-6 text-2xl font-semibold">See each solution in action</h2>
-          <SolutionTabs solutions={solutions} />
+          <SolutionTabs items={solutions} basePath="/solutions" id="solutions-page" label="Solutions" />
         </Reveal>
       </section>
       <CtaBand />

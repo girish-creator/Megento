@@ -1,9 +1,10 @@
 import { getSolution } from "@/lib/solutions";
+import { getService } from "@/lib/services";
 
 // Placeholder sample screens; replace with real screenshots in /public when available.
 export async function GET(_req: Request, { params }: { params: Promise<{ slug: string; n: string }> }) {
   const { slug, n } = await params;
-  const s = getSolution(slug);
+  const s = getSolution(slug) ?? getService(slug);
   const i = Number(n);
   if (!s || !Number.isInteger(i) || i < 1 || i > 4) return new Response("Not found", { status: 404 });
 
